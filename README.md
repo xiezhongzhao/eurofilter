@@ -1,3 +1,5 @@
+如果公式显示异常，可以查看pdf版本（./images/README.pdf）
+
 ### 姿态消抖-euro filter
 
 #### 1. 任务定义
@@ -153,27 +155,25 @@ if __name__ == '__main__':
 
 最小截止频率min_cutoff为0.15，速率系数beta为0.01，d_cutoff=1.0，这里强调一下，在姿态滤波时d_cutoff一般等于视频帧率，滤波效果如下图：
 
-![euro-min_cutoff_0.15_beta_0.10](.\images\euro-min_cutoff_0.15_beta_0.10.png)
+![euro-min_cutoff_0.15_beta_0.01](./images/euro-min_cutoff_0.15_beta_0.01.png)
 
 最小截止频率min_cutoff为0.05，速率系数beta为0.01，滤波效果如下图：
 
-![euro-min_cutoff_0.05_beta_0.01](.\images\euro-min_cutoff_0.05_beta_0.01.png)
+![euro-min_cutoff_0.05_beta_0.01](./images/euro-min_cutoff_0.05_beta_0.01.png)
 
 最小截止频率min_cutoff为0.15，速率系数beta为0.60，滤波效果如下图：
 
-![euro-min_cutoff_0.15_beta_0.10](.\images\euro-min_cutoff_0.15_beta_0.60.png)
+![euro-min_cutoff_0.15_beta_0.10](./images/euro-min_cutoff_0.15_beta_0.60.png)
 
 总结：降低最小截至频率可以大幅度的降低抖动，但是会出现延迟，增加速度系数可以降低延迟，但是去抖效果会大大降低。
 
 #### 3. 实现效果
 
 下面的跳舞教学视频，采用**精度较差的人体姿态模型**推理关节点位置，可以看到关键点狂魔乱舞的状态：
-
-<video id="video" controls="" preload="none"> <source id="mp4" src="./images/jitter.mp4" type="video/mp4"> </video>
+![](./images/jitter%20-original-original.gif)
 
 通过euro滤波器对关节点进行简单处理后，关节点就会变得非常丝滑：
-<video id="video" controls="" preload="none"> <source id="mp4" src="./images/nojitter.mp4" type="video/mp4"> </video>
-
+![](./images/nojitter%20-original-original.gif)
 
 
 #### 4. 参考文献
