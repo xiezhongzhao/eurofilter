@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.16.3)
 project(eurofilter)
 
 set(CMAKE_BUILD_TYPES "REQUIRED")
@@ -14,6 +14,7 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/filter/)
 include_directories(${PROJECT_SOURCE_DIR})
 add_executable(eurofilter main.cpp)
 target_link_libraries(${PROJECT_NAME} filter ${OpenCV_LIBS} )
+
 
 
 

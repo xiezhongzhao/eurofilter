@@ -1,3 +1,5 @@
+[TOC]
+
 如果公式显示异常，可以查看pdf版本（./images/README.pdf）
 
 ### 姿态消抖-euro filter

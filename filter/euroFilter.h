@@ -105,18 +105,14 @@ private:
 
 };
 
-    float Filter1D(float t, float val, float MinCutoff = 0.300, float Beta = 0.010, float DCutoff = 1.0);
+float Filter1D(float t, float val, float MinCutoff = 0.300, float Beta = 0.010, float DCutoff = 1.0);
 
-    vector<cv::Point2f> Filter2D(vector<cv::Point2f> keypoints,
+vector<cv::Point2f> Filter2D(vector<cv::Point2f> keypoints,
+                         float MinCutoff =1.700, float Beta = 0.300, float DCutoff = 30.0);
+
+vector<cv::Point3f> Filter3D(vector<cv::Point3f> keypoints,
                              float MinCutoff =1.700, float Beta = 0.300, float DCutoff = 30.0);
-
-    vector<cv::Point3f> Filter3D(vector<cv::Point3f> keypoints,
-                                 float MinCutoff =1.700, float Beta = 0.300, float DCutoff = 30.0);
-
 };
-
-
-void testEuroFilter();
 
 
 #endif //VNECT_SKELETON_FITTING_EUROFILTER_H
