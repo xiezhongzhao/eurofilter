@@ -96,8 +96,8 @@ namespace filter{
     vector<cv::Point2f> Eurofilter2D::FilterSignal(clock_t TCurr, vector<cv::Point2f> CurrValue) {
 
         // compute the filtered signal
-        float te = (TCurr - TPrev) / 1000.0;
-        std::cout << "te: " << te << std::endl;
+        float te = (TCurr - TPrev) / 1000.0 / 1000.0;
+        std::cout << "te: " << te << std::endl; //数值一般在0.x左右
 
         // the filtered derivative of the signal.
         vector<cv::Point2f> dotX;
@@ -182,7 +182,7 @@ namespace filter{
 
     vector<cv::Point3f> Eurofilter3D::FilterSignal(clock_t TCurr, vector<cv::Point3f> CurrValue) {
         // compute the filtered signal
-        float te = (TCurr - TPrev) / 1000.0;
+        float te = (TCurr - TPrev) / 1000.0 / 1000.0;
 //        std::cout << "te: " << te << std::endl;
 
         // the filtered derivative of the signal.
